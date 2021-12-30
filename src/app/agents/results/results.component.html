@@ -1,0 +1,30 @@
+<div class="row">
+    <div *ngFor="let agent of agents" class="col-md-4 col-sm-6 pb-5">
+        <div class="card text-center">
+            <div class="card-header">
+                {{ agent.displayName }}
+            </div>
+            <img src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/bustportrait.png"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ agent.agentName }}</h5>
+                <p class="card-text">{{ agent.description }}</p>
+
+            </div>
+            <div class="card-footer text-muted">
+                <img class="hability"
+                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    alt="">
+                <img class="hability"
+                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    alt="">
+                <img class="hability"
+                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    alt="">
+                <img class="hability"
+                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    alt="">
+            </div>
+        </div>
+    </div>
+</div>
