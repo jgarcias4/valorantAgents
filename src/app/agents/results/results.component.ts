@@ -1,33 +1,22 @@
-import { Component } from '@angular/core';
-
-interface Agent {
-  agentName: string;
-  description: string;
-  displayName: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { AgentsService } from '../services/agents.service';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent{
+export class ResultsComponent implements OnInit {
 
-  agents: Agent [] = [
-    {
-      agentName: 'Breach',
-      description: 'Habilidades',
-      displayName: 'Iniciador'
-    },
-    {
-      agentName: 'Raze',
-      description: 'Habilidades',
-      displayName: 'Duelista'
-    }
+  get results() {
+    return this.agentService.results;
+  }
 
-  ];
+  constructor(private agentService: AgentsService) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    this.agentService.searchAgents();
+  }
 
 
 }

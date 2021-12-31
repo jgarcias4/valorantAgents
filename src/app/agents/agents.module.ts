@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { AgentsPageComponent } from './agents-page/agents-page.component';
 import { ResultsComponent } from './results/results.component';
+import { SearchComponent } from './search/search.component';
 
 
 
 @NgModule({
   declarations: [
     AgentsPageComponent,
-    ResultsComponent
+    ResultsComponent,
+    SearchComponent
   ],
   exports: [
-    AgentsPageComponent
+    AgentsPageComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule

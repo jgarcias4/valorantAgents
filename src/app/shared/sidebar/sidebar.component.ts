@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AgentsService } from 'src/app/agents/services/agents.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
 
-  constructor() { }
+  constructor(private agentsService: AgentsService) { }
 
-  ngOnInit(): void {
-  }
+  // search(query: string){
+  //   this.agentsService.searchAgents(query);
+  // }
 
 }

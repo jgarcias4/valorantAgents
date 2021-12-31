@@ -1,28 +1,27 @@
 <div class="row">
-    <div *ngFor="let agent of agents" class="col-md-4 col-sm-6 pb-5">
-        <div class="card text-center">
+    <div *ngFor="let agent of results" class="col-md-4 col-sm-6 pb-5">
+        <div class="card border-danger text-center animate__animated animate__fadeIn">
             <div class="card-header">
-                {{ agent.displayName }}
+                <h4>{{ agent.displayName }}</h4>
             </div>
-            <img src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/bustportrait.png"
-                class="card-img-top" alt="...">
+            <img [src]="agent.bustPortrait"
+                class="card-img-top" [alt]="agent.displayName">
             <div class="card-body">
-                <h5 class="card-title">{{ agent.agentName }}</h5>
+                <h5 class="card-title">{{ agent.role?.displayName }}</h5>
                 <p class="card-text">{{ agent.description }}</p>
-
             </div>
             <div class="card-footer text-muted">
                 <img class="hability"
-                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    [src]="agent.abilities[0].displayIcon"
+                    [alt]="agent.abilities[0].description">
+                <img class="hability"
+                    [src]="agent.abilities[1].displayIcon"
                     alt="">
                 <img class="hability"
-                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    [src]="agent.abilities[2].displayIcon"
                     alt="">
                 <img class="hability"
-                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
-                    alt="">
-                <img class="hability"
-                    src="https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+                    [src]="agent.abilities[3].displayIcon"
                     alt="">
             </div>
         </div>
